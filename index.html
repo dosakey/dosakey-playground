@@ -2,195 +2,160 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>영환도사의놀이터</title>
-<script src="./support.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF8EE;--ink:#2B2118;--sub:#6B5B4B;--orange:#F2711C;--teal:#1C8C7A;--sky:#CDEBF5;--card:#FFFFFF;--line:#F0DFC8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:17px;line-height:1.75}
+a{color:inherit;text-decoration:none}
+.jua{font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo b{width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px}
+.logo strong{font-size:24px;display:block;line-height:1.2}
+.logo small{color:var(--sub);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;background:#fff;border:2px solid var(--line);border-radius:999px;padding:6px}
+nav a{padding:8px 16px;border-radius:999px;font-weight:700;font-size:15px}
+nav a:hover{background:var(--bg)}
+nav a.cta{background:var(--teal);color:#fff}
+.hero{padding:24px 0 8px}
+.scene{background:var(--sky);border-radius:36px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;align-items:end;position:relative}
+.scene .txt{padding:48px 40px 56px}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#fff;color:var(--orange);font-weight:700;padding:6px 14px;border-radius:999px;font-size:15px}
+h1{font-size:58px;line-height:1.2;margin:16px 0 14px;letter-spacing:-1px}
+h1 span{color:var(--orange)}
+.lead{color:#3E5560;font-size:18px;margin:0 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:14px 26px;border-radius:999px;font-weight:700;box-shadow:0 4px 0 rgba(0,0,0,.15)}
+.btn.p{background:var(--orange);color:#fff}
+.btn.s{background:#fff}
+.scene svg{display:block;width:100%}
+section.blk{padding:48px 0 8px}
+h2{font-size:38px;margin:0 0 4px;letter-spacing:-.5px}
+.desc{color:var(--sub);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .15s}
+.card:hover{transform:translateY(-4px) rotate(-.5deg)}
+.ico{width:60px;height:60px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.card h3{margin:0;font-size:24px}
+.card p{margin:0;color:var(--sub);flex-grow:1}
+.card .dl{align-self:flex-start;background:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;font-size:15px}
+.card.empty{border-style:dashed;background:transparent;align-items:center;text-align:center;justify-content:center}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:18px}
+.panel{border-radius:32px;padding:30px}
+.study{background:#fff;border:2px solid var(--line)}
+.garage{background:var(--teal);color:#fff;position:relative;overflow:hidden}
+.garage .desc{color:#D3F0EA}
+.item{display:flex;gap:14px;align-items:center;background:var(--bg);border-radius:20px;padding:14px 16px;margin-top:10px}
+.item .n{width:42px;height:42px;border-radius:14px;background:#FFE3CC;color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.item h4{margin:0;font-size:18px}.item p{margin:0;color:var(--sub);font-size:15px}
+.garage .item{background:rgba(255,255,255,.14)}
+.garage .item p{color:#D3F0EA}
+.garage .item .n{background:#FFD166;color:#2B2118}
+.note{margin-top:14px;background:#FFD166;color:#2B2118;border-radius:16px;padding:10px 14px;font-size:15px}
+.links a{display:flex;justify-content:space-between;background:var(--bg);border-radius:18px;padding:12px 16px;margin-top:10px;font-weight:700}
+.links a span{color:var(--sub);font-weight:400}
+.guest{background:var(--orange);color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.guest .btn{background:#fff;color:var(--orange);align-self:flex-start}
+footer{margin-top:56px;background:#2B2118;color:#E8D9C5;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-top:20px;padding-bottom:20px}
+@media(max-width:860px){.scene{grid-template-columns:1fr}.scene .txt{padding:32px 24px 8px}h1{font-size:40px}.two{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
-<style>
-body{margin:0}
-a{color:#2557D6}a:hover{color:#173E9E}
-</style>
-</helmet>
-<div style="min-height: 100vh; background: #F6F8FC; color: #141A29; font-family: 'Noto Sans KR', sans-serif; line-height: 1.75; font-size: 17px">
+<header><div class="wrap">
+  <a class="logo" href="#top"><b class="jua">영</b><span><strong class="jua">영환도사의 놀이터</strong><small>만들고 · 배우고 · 정비하는</small></span></a>
+  <nav><a href="#programs">프로그램</a><a href="#study">공부 기록</a><a href="#car">차 정비</a><a href="#links">링크</a><a class="cta" href="#guestbook">방명록</a></nav>
+</div></header>
 
-  <header style="background: #FFFFFF; border-bottom: 1px solid #E2E7F0">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #141A29">
-        <span style="width: 44px; height: 44px; border-radius: 12px; background: {{accent}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 20px">영</span>
-        <span style="display: flex; flex-direction: column; line-height: 1.3">
-          <span style="font-weight: 900; font-size: 21px; letter-spacing: -0.5px">영환도사의 놀이터</span>
-          <span style="font-size: 13px; color: #5A6478">만들고 · 배우고 · 정비하는</span>
-        </span>
-      </a>
-      <nav aria-label="주 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
-        <a href="#programs" style="color: #141A29; text-decoration: none; padding: 12px 16px; font-size: 16px; font-weight: 700">프로그램</a>
-        <a href="#study" style="color: #141A29; text-decoration: none; padding: 12px 16px; font-size: 16px; font-weight: 700">공부 기록</a>
-        <a href="#car" style="color: #141A29; text-decoration: none; padding: 12px 16px; font-size: 16px; font-weight: 700">차 정비</a>
-        <a href="#links" style="color: #141A29; text-decoration: none; padding: 12px 16px; font-size: 16px; font-weight: 700">링크</a>
-        <a href="#guestbook" style="margin-left: 8px; background: {{accent}}; color: #FFFFFF; text-decoration: none; padding: 12px 20px; font-size: 16px; font-weight: 700; border-radius: 12px">방명록</a>
-      </nav>
+<section class="hero" id="top"><div class="wrap">
+  <div class="scene">
+    <div class="txt">
+      <span class="badge">🚗 어서 오세요, 부릉부릉!</span>
+      <h1 class="jua">만들고, 배우고,<br>정비하는<br><span>나만의 차고</span></h1>
+      <p class="lead">직접 만든 프로그램과 공부한 내용, 차 정비 기록을 모아 두는 작은 놀이터입니다. 천천히 둘러보세요.</p>
+      <div class="btns"><a class="btn p" href="#programs">프로그램 보러 가기</a><a class="btn s" href="#guestbook">방명록 남기기</a></div>
     </div>
-  </header>
+    <svg viewBox="0 0 520 360" role="img" aria-label="길 위를 달리는 주황색 자동차 그림">
+      <!-- 해와 구름 -->
+      <circle cx="420" cy="70" r="34" fill="#FFD166"/>
+      <g fill="#fff"><ellipse cx="150" cy="70" rx="46" ry="18"/><ellipse cx="180" cy="58" rx="30" ry="18"/><ellipse cx="320" cy="110" rx="34" ry="13"/></g>
+      <!-- 언덕 -->
+      <path d="M0 250 Q130 180 260 230 T520 210 V360 H0 Z" fill="#9ED8A8"/>
+      <path d="M0 270 Q160 230 300 260 T520 250 V360 H0 Z" fill="#6CC28A"/>
+      <!-- 나무 -->
+      <rect x="66" y="210" width="8" height="34" fill="#7A5230"/><circle cx="70" cy="200" r="22" fill="#3FA36C"/>
+      <rect x="456" y="196" width="8" height="34" fill="#7A5230"/><circle cx="460" cy="186" r="20" fill="#3FA36C"/>
+      <!-- 도로 -->
+      <rect x="0" y="292" width="520" height="68" fill="#4A4A52"/>
+      <g fill="#FFD166"><rect x="20" y="322" width="50" height="7" rx="3"/><rect x="120" y="322" width="50" height="7" rx="3"/><rect x="220" y="322" width="50" height="7" rx="3"/><rect x="320" y="322" width="50" height="7" rx="3"/><rect x="420" y="322" width="50" height="7" rx="3"/></g>
+      <!-- 속도선 -->
+      <g stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"><path d="M40 240 H90"/><path d="M20 262 H80"/><path d="M50 284 H100"/></g>
+      <!-- 그림자 -->
+      <ellipse cx="300" cy="312" rx="170" ry="10" fill="#000" opacity=".2"/>
+      <!-- 차체 -->
+      <g transform="translate(120 160)">
+        <path d="M20 140 V110 Q22 92 46 88 L92 82 L136 40 Q148 30 166 30 H252 Q272 30 284 44 L318 82 L338 86 Q358 92 360 112 V140 Z" fill="#F2711C"/>
+        <path d="M20 128 H360 V140 H20 Z" fill="#C9530C"/>
+        <path d="M142 46 L106 82 H196 V46 Z" fill="#CDEBF5"/>
+        <path d="M208 46 V82 H302 L276 52 Q272 46 262 46 Z" fill="#CDEBF5"/>
+        <path d="M150 52 L130 74" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+        <rect x="196" y="46" width="12" height="80" fill="#C9530C"/>
+        <rect x="160" y="96" width="22" height="6" rx="3" fill="#7A2E00"/><rect x="258" y="96" width="22" height="6" rx="3" fill="#7A2E00"/>
+        <path d="M340 98 h18 v14 h-18 z" fill="#FFF3B0"/>
+        <rect x="20" y="100" width="10" height="14" rx="3" fill="#E63946"/>
+        <!-- 지붕 짐 -->
+        <rect x="170" y="18" width="80" height="12" rx="4" fill="#1C8C7A"/>
+        <!-- 바퀴 -->
+        <circle cx="96" cy="140" r="30" fill="#2B2118"/><circle cx="96" cy="140" r="13" fill="#E8E8E8"/>
+        <circle cx="290" cy="140" r="30" fill="#2B2118"/><circle cx="290" cy="140" r="13" fill="#E8E8E8"/>
+      </g>
+      <!-- 빛줄기 -->
+      <path d="M480 266 L520 252 V292 Z" fill="#FFF3B0" opacity=".7"/>
+    </svg>
+  </div>
+</div></section>
 
-  <section id="top" style="background: #FFFFFF">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 27px 24px 29px; display: flex; flex-wrap: wrap; gap: 36px; align-items: center">
-      <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-        <span style="align-self: flex-start; display: flex; align-items: center; gap: 8px; background: #FFF4DB; color: #8A5300; font-size: 15px; font-weight: 700; padding: 8px 16px; border-radius: 999px">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #F59E0B"></span>어서 오세요!
-        </span>
-        <h1 style="margin: 0; font-size: 64px; line-height: 1.2; font-weight: 900; letter-spacing: -2.5px">만들고, 배우고,<br>정비하는<br><span style="color: {{accent}}">나만의 공간</span></h1>
-        <p style="margin: 0; font-size: 19px; color: #4A5468; max-width: 540px">직접 만든 프로그램과 공부한 내용, 차 정비 기록을 모아 두는 작은 놀이터입니다. 편하게 둘러보시고, 마음에 드는 게 있다면 방명록에 한마디 남겨 주세요.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
-          <a href="#programs" style="background: {{accent}}; color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 16px 28px; border-radius: 14px; font-size: 17px">프로그램 보러 가기</a>
-          <a href="#guestbook" style="background: #EEF2FA; color: #141A29; text-decoration: none; font-weight: 700; padding: 16px 28px; border-radius: 14px; font-size: 17px">방명록 남기기</a>
-        </div>
-      </div>
-      <div style="flex: 1 1 400px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-        <div style="grid-column: span 2; height: 180px; border-radius: 24px; background: #E6EDFB; border: 2px dashed #A9BBE6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #2D4A8C">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
-          <span style="font-size: 15px; font-weight: 700">[대표 사진 자리 · 작업 책상이나 차 사진]</span>
-        </div>
-        <a href="#programs" style="background: #141A29; color: #FFFFFF; border-radius: 20px; padding: 16px; text-decoration: none; display: flex; flex-direction: column; gap: 6px">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9DB8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"></path></svg>
-          <span style="font-weight: 700; font-size: 18px">프로그램</span>
-          <span style="font-size: 14px; color: #B8C2D6">직접 만든 도구 모음</span>
-        </a>
-        <a href="#car" style="background: #F59E0B; color: #141A29; border-radius: 20px; padding: 16px; text-decoration: none; display: flex; flex-direction: column; gap: 6px">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#141A29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"></path></svg>
-          <span style="font-weight: 700; font-size: 18px">차 정비</span>
-          <span style="font-size: 14px; color: #3D2A00">정비 기록과 팁</span>
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="blk" id="programs"><div class="wrap">
+  <h2 class="jua">🛠 내가 만든 프로그램</h2>
+  <p class="desc">직접 만든 프로그램을 소개하고 내려받는 곳입니다.</p>
+  <div class="grid">
+    <article class="card"><span class="ico" style="background:#FFE3CC">📅</span><h3 class="jua">제도개선달력</h3><p>메모와 A4 가로 인쇄가 되는 데스크톱 달력</p><a class="dl" href="#programs">⬇ 내려받기 (준비 중)</a></article>
+    <article class="card"><span class="ico" style="background:#D6F1EC">📸</span><h3 class="jua">캡처 도구</h3><p>화면을 간편하게 캡처하는 프로그램</p><a class="dl" href="#programs">⬇ 내려받기 (준비 중)</a></article>
+    <article class="card empty"><span class="ico" style="background:#fff;border:2px dashed var(--line)">＋</span><h3 class="jua">새 프로그램 자리</h3><p>앞으로 만들 프로그램이 이곳에 추가됩니다.</p></article>
+  </div>
+</div></section>
 
-  <section id="programs" style="max-width: 1160px; margin: 0 auto; padding: 56px 24px 20px">
-    <p style="margin: 0; font-size: 15px; font-weight: 700; color: {{accent}}">PROGRAMS</p>
-    <h2 style="margin: 4px 0 6px; font-size: 38px; font-weight: 900; letter-spacing: -1.2px">내가 만든 프로그램</h2>
-    <p style="margin: 0 0 20px; color: #4A5468; font-size: 17px">직접 만든 프로그램을 소개하고 내려받는 곳입니다.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px">
-      <article style="background: #FFFFFF; border: 1px solid #E2E7F0; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-        <span style="width: 56px; height: 56px; border-radius: 16px; background: #E6EDFB; display: flex; align-items: center; justify-content: center">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2557D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-        </span>
-        <h3 style="margin: 0; font-size: 23px; letter-spacing: -0.5px">제도개선달력</h3>
-        <p style="margin: 0; color: #4A5468; font-size: 17px; flex-grow: 1">메모와 A4 가로 인쇄가 되는 데스크톱 달력</p>
-        <a href="#programs" style="align-self: flex-start; display: flex; align-items: center; gap: 8px; background: #EEF2FA; color: #141A29; text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 18px; border-radius: 12px">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"></path></svg>내려받기 (준비 중)
-        </a>
-      </article>
-      <article style="background: #FFFFFF; border: 1px solid #E2E7F0; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-        <span style="width: 56px; height: 56px; border-radius: 16px; background: #FFF4DB; display: flex; align-items: center; justify-content: center">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        </span>
-        <h3 style="margin: 0; font-size: 23px; letter-spacing: -0.5px">캡처 도구</h3>
-        <p style="margin: 0; color: #4A5468; font-size: 17px; flex-grow: 1">화면을 간편하게 캡처하는 프로그램</p>
-        <a href="#programs" style="align-self: flex-start; display: flex; align-items: center; gap: 8px; background: #EEF2FA; color: #141A29; text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 18px; border-radius: 12px">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"></path></svg>내려받기 (준비 중)
-        </a>
-      </article>
-      <article style="background: transparent; border: 2px dashed #C3CCDD; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 8px; justify-content: center; align-items: center; text-align: center">
-        <span style="width: 56px; height: 56px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E2E7F0; display: flex; align-items: center; justify-content: center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A5468" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
-        </span>
-        <h3 style="margin: 0; font-size: 20px; color: #2E3648">새 프로그램 자리</h3>
-        <p style="margin: 0; color: #4A5468; font-size: 16px">앞으로 만들 프로그램이 이곳에 추가됩니다.</p>
-      </article>
-    </div>
-  </section>
+<section class="blk"><div class="wrap two">
+  <div class="panel study" id="study">
+    <h2 class="jua">📒 공부 기록</h2><p class="desc">클로드 활용법과 코딩 공부 내용을 차곡차곡 기록합니다.</p>
+    <div class="item"><span class="n jua">1</span><div><h4>오늘 배운 것</h4><p>짧은 메모 형태로 하루 한 줄씩</p></div></div>
+    <div class="item"><span class="n jua">2</span><div><h4>막혔던 점과 해결</h4><p>같은 문제를 겪는 분께 도움이 되도록</p></div></div>
+  </div>
+  <div class="panel garage" id="car">
+    <h2 class="jua">🔧 차 정비</h2><p class="desc">정비 기록, 점검 체크리스트, 직접 해 본 팁을 모아 둡니다.</p>
+    <div class="item"><span class="n">🗓</span><div><h4>정비 기록</h4><p>날짜, 작업 내용, 교체 부품</p></div></div>
+    <div class="item"><span class="n">✅</span><div><h4>점검 체크리스트</h4><p>계절별·주행거리별 점검 항목</p></div></div>
+    <div class="note">⚠ 사진을 올릴 때는 차량 번호판과 집 주소가 보이지 않게 가려 주세요.</div>
+  </div>
+</div></section>
 
-  <section style="max-width: 1160px; margin: 0 auto; padding: 36px 24px 20px; display: flex; flex-wrap: wrap; gap: 14px">
-    <div id="study" style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E7F0; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-      <div>
-        <p style="margin: 0; font-size: 15px; font-weight: 700; color: {{accent}}">STUDY</p>
-        <h2 style="margin: 4px 0 6px; font-size: 32px; font-weight: 900; letter-spacing: -1px">공부 기록</h2>
-        <p style="margin: 0; color: #4A5468; font-size: 17px">클로드 활용법과 코딩 공부 내용을 차곡차곡 기록합니다.</p>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <div style="display: flex; gap: 16px; align-items: center; background: #F6F8FC; border-radius: 16px; padding: 14px 16px">
-          <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: #E6EDFB; color: #2557D6; font-weight: 900; display: flex; align-items: center; justify-content: center">1</span>
-          <div>
-            <h3 style="margin: 0; font-size: 19px">오늘 배운 것</h3>
-            <p style="margin: 0; color: #4A5468; font-size: 16px">짧은 메모 형태로 하루 한 줄씩</p>
-          </div>
-        </div>
-        <div style="display: flex; gap: 16px; align-items: center; background: #F6F8FC; border-radius: 16px; padding: 14px 16px">
-          <span style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: #E6EDFB; color: #2557D6; font-weight: 900; display: flex; align-items: center; justify-content: center">2</span>
-          <div>
-            <h3 style="margin: 0; font-size: 19px">막혔던 점과 해결</h3>
-            <p style="margin: 0; color: #4A5468; font-size: 16px">같은 문제를 겪는 분께 도움이 되도록</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="car" style="flex: 1 1 420px; min-width: 0; background: #141A29; color: #FFFFFF; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
-      <div>
-        <p style="margin: 0; font-size: 15px; font-weight: 700; color: #F5B83D">GARAGE</p>
-        <h2 style="margin: 4px 0 6px; font-size: 32px; font-weight: 900; letter-spacing: -1px">차 정비</h2>
-        <p style="margin: 0; color: #B8C2D6; font-size: 17px">정비 기록, 점검 체크리스트, 직접 해 본 팁을 모아 둡니다.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
-        <div style="background: #222B3F; border-radius: 16px; padding: 14px 16px">
-          <h3 style="margin: 0 0 2px; font-size: 19px">정비 기록</h3>
-          <p style="margin: 0; color: #B8C2D6; font-size: 16px">날짜, 작업 내용, 교체 부품</p>
-        </div>
-        <div style="background: #222B3F; border-radius: 16px; padding: 14px 16px">
-          <h3 style="margin: 0 0 2px; font-size: 19px">점검 체크리스트</h3>
-          <p style="margin: 0; color: #B8C2D6; font-size: 16px">계절별·주행거리별 점검 항목</p>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-start; background: #3A2F14; border-radius: 14px; padding: 11px 12px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5B83D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 4px"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>
-        <p style="margin: 0; color: #FCE7B2; font-size: 16px">사진을 올릴 때는 차량 번호판과 집 주소가 보이지 않게 가려 주세요.</p>
-      </div>
-    </div>
-  </section>
+<section class="blk"><div class="wrap two">
+  <div class="panel study links" id="links">
+    <h2 class="jua">🔗 링크 모음</h2>
+    <a href="https://www.google.com" target="_blank" rel="noopener">구글 <span>검색 ↗</span></a>
+    <a href="https://claude.ai" target="_blank" rel="noopener">Claude <span>공부와 제작 도우미 ↗</span></a>
+  </div>
+  <div class="panel guest" id="guestbook">
+    <div><h2 class="jua">💌 방명록</h2><p style="margin:0">다녀가신 흔적을 남겨 주세요.<br>따뜻한 한마디가 큰 힘이 됩니다.</p></div>
+    <a class="btn" href="#guestbook">방명록 남기기 (준비 중)</a>
+  </div>
+</div></section>
 
-  <section style="max-width: 1160px; margin: 0 auto; padding: 14px 24px 64px; display: flex; flex-wrap: wrap; gap: 14px">
-    <div id="links" style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E7F0; border-radius: 28px; padding: 28px">
-      <p style="margin: 0; font-size: 15px; font-weight: 700; color: {{accent}}">LINKS</p>
-      <h2 style="margin: 4px 0 18px; font-size: 32px; font-weight: 900; letter-spacing: -1px">링크 모음</h2>
-      <div style="display: flex; flex-direction: column; gap: 10px">
-        <a href="https://www.google.com" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #F6F8FC; border-radius: 14px; padding: 11px 14px; text-decoration: none; color: #141A29">
-          <span><strong style="font-size: 18px">구글</strong><span style="color: #4A5468; margin-left: 10px">검색</span></span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5468" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
-        </a>
-        <a href="https://claude.ai" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #F6F8FC; border-radius: 14px; padding: 11px 14px; text-decoration: none; color: #141A29">
-          <span><strong style="font-size: 18px">Claude</strong><span style="color: #4A5468; margin-left: 10px">공부와 제작 도우미</span></span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5468" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
-        </a>
-        <p style="margin: 6px 0 0; color: #4A5468; font-size: 16px; padding: 0 4px">자주 가는 사이트를 이곳에 추가합니다.</p>
-      </div>
-    </div>
-    <div id="guestbook" style="flex: 1 1 420px; min-width: 0; background: {{accent}}; color: #FFFFFF; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px">
-      <div>
-        <p style="margin: 0; font-size: 15px; font-weight: 700; color: #FFE3A3">GUESTBOOK</p>
-        <h2 style="margin: 4px 0 8px; font-size: 32px; font-weight: 900; letter-spacing: -1px">방명록</h2>
-        <p style="margin: 0; color: #E6EDFF; font-size: 18px">다녀가신 흔적을 남겨 주세요.<br>따뜻한 한마디가 큰 힘이 됩니다.</p>
-      </div>
-      <a href="#guestbook" style="align-self: flex-start; background: #FFFFFF; color: #173E9E; text-decoration: none; font-weight: 700; padding: 16px 28px; border-radius: 14px; font-size: 17px">방명록 남기기 (준비 중)</a>
-    </div>
-  </section>
-
-  <footer style="background: #141A29">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: #B8C2D6; font-size: 15px">
-      <span>© 영환도사의 놀이터</span>
-      <span>만들고, 배우고, 정비하는 나만의 공간</span>
-    </div>
-  </footer>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2557D6","options":["#2557D6","#0F766E","#6D3FD1","#1F2937"]},"$preview":{"width":1280,"height":2700}}'>
-class Component extends DCLogic {
-  renderVals() {
-    return { accent: this.props.accent ?? '#2557D6' };
-  }
-}
-</script>
+<footer><div class="wrap"><span>© 영환도사의 놀이터</span><span>오늘도 안전 운전! 🚙</span></div></footer>
 </body>
 </html>
