@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>영환도사의놀이터 · 시안 1 설계도</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B2545;--bg2:#13315C;--line:#8DA9C4;--ink:#EEF4ED;--sub:#B7C9DB;--acc:#FFC857;--card:#102E52}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:17px;line-height:1.75;
+ background-image:linear-gradient(rgba(141,169,196,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(141,169,196,.08) 1px,transparent 1px);background-size:24px 24px}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid rgba(141,169,196,.3);background:rgba(11,37,69,.9);position:sticky;top:0;backdrop-filter:blur(6px);z-index:5}
+header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;gap:12px;align-items:center}
+.logo b{width:44px;height:44px;border:2px solid var(--acc);color:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;border-radius:6px}
+.logo strong{font-size:21px;font-weight:900;letter-spacing:-.5px;display:block;line-height:1.3}
+.logo small{font-size:12px;color:var(--sub)}
+nav{display:flex;flex-wrap:wrap;gap:4px}
+nav a{padding:10px 14px;font-weight:700;font-size:15px;border-radius:6px}
+nav a:hover{background:var(--bg2)}
+nav a.cta{background:var(--acc);color:var(--bg)}
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.tag{display:inline-block;border:1px dashed var(--line);color:var(--acc);padding:4px 12px;font-size:13px;border-radius:4px}
+h1{font-size:56px;line-height:1.2;font-weight:900;letter-spacing:-2px;margin:16px 0}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{color:var(--sub);font-size:18px;margin:0 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:14px 24px;border-radius:6px;font-weight:700;border:2px solid var(--acc)}
+.btn.p{background:var(--acc);color:var(--bg)}
+.btn.s{color:var(--acc)}
+.draw{border:1px solid rgba(141,169,196,.4);border-radius:8px;padding:16px;background:rgba(19,49,92,.5);position:relative}
+.draw .cap{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-bottom:6px}
+section.blk{padding:40px 0}
+.eyebrow{color:var(--acc);font-size:13px;font-weight:700}
+h2{font-size:34px;font-weight:900;letter-spacing:-1px;margin:4px 0 6px}
+.desc{color:var(--sub);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid rgba(141,169,196,.35);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:8px;position:relative}
+.card .no{position:absolute;top:14px;right:16px;font-size:12px;color:var(--line)}
+.card h3{margin:0;font-size:22px}
+.card p{margin:0;color:var(--sub);flex-grow:1}
+.card .dl{align-self:flex-start;border:1px solid var(--acc);color:var(--acc);padding:8px 14px;border-radius:6px;font-weight:700;font-size:15px}
+.card.empty{border-style:dashed;background:transparent;align-items:center;justify-content:center;text-align:center}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:14px}
+.panel{background:var(--card);border:1px solid rgba(141,169,196,.35);border-radius:8px;padding:28px}
+.row{display:flex;gap:14px;align-items:center;border-top:1px dashed rgba(141,169,196,.3);padding:12px 0}
+.row .n{font-size:13px;color:var(--acc);min-width:36px}
+.row h4{margin:0;font-size:18px}.row p{margin:0;color:var(--sub);font-size:15px}
+.warn{margin-top:14px;border:1px solid var(--acc);color:#FFE7A8;padding:10px 14px;border-radius:6px;font-size:15px}
+.links a{display:flex;justify-content:space-between;border-top:1px dashed rgba(141,169,196,.3);padding:12px 0;font-weight:700}
+.links a span{color:var(--sub);font-weight:400}
+.guest{background:var(--acc);color:var(--bg);border-radius:8px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.guest .btn{background:var(--bg);color:var(--acc);align-self:flex-start;border-color:var(--bg)}
+footer{border-top:1px solid rgba(141,169,196,.3);margin-top:40px;padding:20px 0;color:var(--sub);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}h1{font-size:40px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top"><b>영</b><span><strong>영환도사의 놀이터</strong><small class="mono">BUILD · LEARN · REPAIR</small></span></a>
+  <nav><a href="#programs">프로그램</a><a href="#study">공부 기록</a><a href="#car">차 정비</a><a href="#links">링크</a><a class="cta" href="#guestbook">방명록</a></nav>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="tag mono">DWG NO. 001 — 어서 오세요</span>
+    <h1>만들고, 배우고,<br>정비하는<br><em>나만의 공간</em></h1>
+    <p class="lead">직접 만든 프로그램과 공부한 내용, 차 정비 기록을 설계도처럼 차곡차곡 정리해 두는 작은 놀이터입니다.</p>
+    <div class="btns"><a class="btn p" href="#programs">프로그램 보러 가기</a><a class="btn s" href="#guestbook">방명록 남기기</a></div>
+  </div>
+  <div class="draw">
+    <div class="cap mono"><span>SIDE VIEW · SCALE 1:20</span><span>REV.A</span></div>
+    <svg viewBox="0 0 440 230" width="100%" role="img" aria-label="자동차 측면 설계도 그림" fill="none" stroke="#EEF4ED" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+      <!-- 지면 -->
+      <path d="M10 170 H430" stroke="#8DA9C4" stroke-dasharray="6 6"/>
+      <!-- 차체 -->
+      <path d="M36 142 V118 Q38 104 58 100 L128 92 L170 58 Q180 50 196 50 H282 Q298 50 308 60 L344 92 L392 100 Q408 104 410 120 V142 H362 A34 34 0 0 0 296 142 H150 A34 34 0 0 0 84 142 Z"/>
+      <path d="M176 64 L146 92 H232 V64 Z"/>
+      <path d="M244 64 V92 H326 L300 66 Q296 64 290 64 Z"/>
+      <path d="M232 100 V140" stroke-dasharray="3 4" stroke="#8DA9C4"/>
+      <path d="M252 108 h14"/><path d="M178 108 h14"/>
+      <rect x="392" y="108" width="14" height="8" rx="2" stroke="#FFC857"/>
+      <rect x="38" y="110" width="10" height="10" rx="2" stroke="#FF6B6B"/>
+      <!-- 바퀴 -->
+      <circle cx="117" cy="146" r="26"/><circle cx="117" cy="146" r="11" stroke="#8DA9C4"/>
+      <circle cx="329" cy="146" r="26"/><circle cx="329" cy="146" r="11" stroke="#8DA9C4"/>
+      <path d="M117 135v22M106 146h22M329 135v22M318 146h22" stroke="#8DA9C4" stroke-width="1"/>
+      <!-- 치수선 -->
+      <g stroke="#FFC857" stroke-width="1.2">
+        <path d="M36 192 H410"/><path d="M36 186v12M410 186v12"/>
+        <path d="M117 210 H329"/><path d="M117 204v12M329 204v12"/>
+        <path d="M424 50 V170"/><path d="M418 50h12M418 170h12"/>
+      </g>
+      <g fill="#FFC857" stroke="none" font-family="JetBrains Mono,monospace" font-size="11">
+        <text x="196" y="188">L 4,530</text><text x="200" y="226">WB 2,700</text>
+        <text x="380" y="40">H 1,450</text>
+      </g>
+      <!-- 지시선 -->
+      <g stroke="#8DA9C4" stroke-width="1"><path d="M399 112 L420 86"/><path d="M117 120 L80 70"/></g>
+      <g fill="#B7C9DB" stroke="none" font-family="JetBrains Mono,monospace" font-size="10"><text x="60" y="64">TIRE 225/45R18</text><text x="402" y="80">LAMP</text></g>
+    </svg>
+  </div>
+</div></section>
+
+<section class="blk" id="programs"><div class="wrap">
+  <span class="eyebrow mono">01 / PROGRAMS</span>
+  <h2>내가 만든 프로그램</h2>
+  <p class="desc">직접 만든 프로그램을 소개하고 내려받는 곳입니다.</p>
+  <div class="grid">
+    <article class="card"><span class="no mono">P-01</span><h3>제도개선달력</h3><p>메모와 A4 가로 인쇄가 되는 데스크톱 달력</p><a class="dl" href="#programs">↓ 내려받기 (준비 중)</a></article>
+    <article class="card"><span class="no mono">P-02</span><h3>캡처 도구</h3><p>화면을 간편하게 캡처하는 프로그램</p><a class="dl" href="#programs">↓ 내려받기 (준비 중)</a></article>
+    <article class="card empty"><h3>+ 새 프로그램 자리</h3><p>앞으로 만들 프로그램이 이곳에 추가됩니다.</p></article>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap two">
+  <div class="panel" id="study">
+    <span class="eyebrow mono">02 / STUDY</span><h2>공부 기록</h2><p class="desc">클로드 활용법과 코딩 공부 내용을 기록합니다.</p>
+    <div class="row"><span class="n mono">S-01</span><div><h4>오늘 배운 것</h4><p>짧은 메모 형태로 하루 한 줄씩</p></div></div>
+    <div class="row"><span class="n mono">S-02</span><div><h4>막혔던 점과 해결</h4><p>같은 문제를 겪는 분께 도움이 되도록</p></div></div>
+  </div>
+  <div class="panel" id="car">
+    <span class="eyebrow mono">03 / GARAGE</span><h2>차 정비</h2><p class="desc">정비 기록, 점검 체크리스트, 직접 해 본 팁을 모아 둡니다.</p>
+    <div class="row"><span class="n mono">G-01</span><div><h4>정비 기록</h4><p>날짜, 작업 내용, 교체 부품</p></div></div>
+    <div class="row"><span class="n mono">G-02</span><div><h4>점검 체크리스트</h4><p>계절별·주행거리별 점검 항목</p></div></div>
+    <div class="warn">⚠ 사진을 올릴 때는 차량 번호판과 집 주소가 보이지 않게 가려 주세요.</div>
+  </div>
+</div></section>
+
+<section class="blk"><div class="wrap two">
+  <div class="panel links" id="links">
+    <span class="eyebrow mono">04 / LINKS</span><h2>링크 모음</h2>
+    <a href="https://www.google.com" target="_blank" rel="noopener">구글 <span>검색 ↗</span></a>
+    <a href="https://claude.ai" target="_blank" rel="noopener">Claude <span>공부와 제작 도우미 ↗</span></a>
+  </div>
+  <div class="guest" id="guestbook">
+    <div><span class="eyebrow mono" style="color:#0B2545">05 / GUESTBOOK</span><h2>방명록</h2><p style="margin:0">다녀가신 흔적을 남겨 주세요.<br>따뜻한 한마디가 큰 힘이 됩니다.</p></div>
+    <a class="btn" href="#guestbook">방명록 남기기 (준비 중)</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© 영환도사의 놀이터</span><span class="mono">DRAWN BY 영환도사</span></div></footer>
+</body>
+</html>
